@@ -1,0 +1,40 @@
+EventId,EventTemplate,Occurrences
+e3d9fb97,Out of Memory: Killed process <*> <*>,2362
+22fab53c,session opened for user <*> by (uid=<*>),6
+27624832,session closed for user <*>,6
+64042dcf,ALERT exited abnormally with [<*>],3
+a9c0d032,connection from <*> (<*>-<*>-<*>-<*>.cust.telepacific.net) at Sat Dec <*> <*>:<*>:<*> <*>,21
+b780997e,check pass; user unknown,10
+ca50827d,authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= rhost=ap00.atfdc2-unet.ocn.ne.jp,10
+000b21c6,printk: <*> messages suppressed.,1
+4d06d300,"sendmail: page allocation failure. order:<*>, mode:0x1d<*>",1
+2bd99af8,Call Trace:,5
+6a7e2c59,[<0212ebf3>] __alloc_pages+0x274/0x<*>,5
+cce3e3d5,[<021303bd>] do_page_cache_readahead+0xa3/0x<*>,1
+e5c3c52e,[<0212c71b>] filemap_nopage+0x119/0x26d,1
+84043d58,[<021361c7>] do_no_page+0xa1/0x<*>,1
+87b9983c,[<021359c3>] do_wp_page+0x97/0x21c,1
+6a05380f,[<0213647b>] handle_mm_fault+0x71/0xe<*>,1
+5d1d02ed,[<<*>>] <*>,12
+b926b427,[<02134aa0>] clear_page_tables+0x7c/0x8f,1
+d7f56a7a,[<02137b89>] free_pgtables+0x76/0x7b,1
+c62e3c54,[<02137ca8>] unmap_region+0x80/0xaa,1
+2c9144a4,[<02137c1f>] unmap_vma_list+0xe/0x<*>,1
+90300bef,[<0212144c>] sys_setuid+0xdd/0xe<*>,1
+2257438f,"httpd: page allocation failure. order:<*>, mode:0xd<*>",4
+37f8c386,[<0213d341>] read_swap_cache_async+0x41/0x<*>,2
+4a45ffcb,[<02135dee>] swapin_readahead+0x2c/0x<*>,1
+8b49d04c,[<02135e66>] do_swap_page+0x5d/0x1f<*>,1
+17a42068,[<021364a7>] handle_mm_fault+0x9d/0xe<*>,2
+92496dde,[<0213f423>] put_user_size+0x29/0x2d,3
+18f70ff3,[<0227ecc1>] schedule+0x3ed/0x44d,4
+38143401,[<0210737b>] do_IRQ+0x15d/0x<*>,3
+05fcbb62,[<02135e6d>] do_swap_page+0x64/0x1f<*>,1
+d7191ba8,VM: killing process httpd,3
+145bf27c,[<021359f7>] do_wp_page+0xcb/0x21c,2
+4f2d0e0a,[<021364c6>] handle_mm_fault+0xbc/0xe<*>,2
+8ce26985,[<0211c38d>] proc_dointvec+0x11/0x<*>,1
+cdb39502,[<0211c01d>] do_proc_dointvec_conv+0x0/0x<*>,1
+d6254e1a,cupsd <*> succeeded,2
+6f97e9d4,restart.,1
+434e8555,authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= rhost=<*> user=root,10
