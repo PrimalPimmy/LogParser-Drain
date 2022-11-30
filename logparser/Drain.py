@@ -223,26 +223,6 @@ class Parser:
         df_event.to_csv(os.path.join(self.savePath, self.logName + '_templates.csv'), index=False, columns=["EventId", "EventTemplate", "Occurrences"])
 
 
-    def printTree(self, node, dep):
-        pStr = ''   
-        for i in range(dep):
-            pStr += '\t'
-
-        if node.depth == 0:
-            pStr += 'Root'
-        elif node.depth == 1:
-            pStr += '<' + str(node.digitOrtoken) + '>'
-        else:
-            pStr += node.digitOrtoken
-
-        print(pStr)
-
-        if node.depth == self.depth:
-            return 1
-        for child in node.childD:
-            self.printTree(node.childD[child], dep+1)
-
-
     def parse(self, logName):
         print('Parsing file: ' + os.path.join(self.path, logName))
         start_time = datetime.now()
