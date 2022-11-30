@@ -1,0 +1,10 @@
+EventId,EventTemplate,Occurrences
+968a0b94,authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= <*> <*>,227
+911f3043,connection from <*> <*> at <*> Feb <*> <*>:<*>:<*> <*>,202
+b780997e,check pass; user unknown,66
+d7aa792a,authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= <*>,66
+cd488037,1 more authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= rhost=<*> user=test,1
+f2ee475f,"ANONYMOUS FTP LOGIN FROM <*>, <*>.<*>.<*>-<*>.rev.gaoland.net (anonymous)",1
+980efd56,ttloop: peer died: Invalid or incomplete multibyte or wide character,1
+c148af6a,ttloop: read: Connection timed out,1
+48f29deb,session opened for user root by (uid=<*>),1

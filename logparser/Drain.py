@@ -1,8 +1,4 @@
-"""
-Description : This file implements the Drain algorithm for log parsing
-Author      : LogPAI team
-License     : MIT
-"""
+
 
 import re
 import os
@@ -12,7 +8,7 @@ import hashlib
 from datetime import datetime
 
 
-class Logcluster:
+class LogCluster:
     def __init__(self, logTemplate='', logIDL=None):
         self.logTemplate = logTemplate
         if logIDL is None:
@@ -29,7 +25,7 @@ class Node:
         self.digitOrtoken = digitOrtoken
 
 
-class LogParser:
+class Parser:
     def __init__(self, log_format, indir='./', outdir='./result/', depth=4, st=0.4, 
                  maxChild=100, rex=[], keep_para=True):
         """
@@ -56,6 +52,26 @@ class LogParser:
 
     def hasNumbers(self, s):
         return any(char.isdigit() for char in s)
+
+    def fastMatch(self, logClustL, seq):
+        retLogClust = None
+
+        maxSim = -1
+        maxNumOfPara = -1
+        maxClust = None
+
+        for logClust in logClustL:
+            curSim, curNumOfPara = self.seqDist(logClust.logTemplate, seq)
+            if curSim>maxSim or (curSim==maxSim and curNumOfPara>maxNumOfPara):
+                maxSim = curSim
+                maxNumOfPara = curNumOfPara
+                maxClust = logClust
+
+        if maxSim >= self.st:
+            retLogClust = maxClust  
+
+        return retLogClust
+
 
     def treeSearch(self, rn, seq):
         retLogClust = None
@@ -160,24 +176,6 @@ class LogParser:
         return retVal, numOfPar
 
 
-    def fastMatch(self, logClustL, seq):
-        retLogClust = None
-
-        maxSim = -1
-        maxNumOfPara = -1
-        maxClust = None
-
-        for logClust in logClustL:
-            curSim, curNumOfPara = self.seqDist(logClust.logTemplate, seq)
-            if curSim>maxSim or (curSim==maxSim and curNumOfPara>maxNumOfPara):
-                maxSim = curSim
-                maxNumOfPara = curNumOfPara
-                maxClust = logClust
-
-        if maxSim >= self.st:
-            retLogClust = maxClust  
-
-        return retLogClust
 
     def getTemplate(self, seq1, seq2):
         assert len(seq1) == len(seq2)
@@ -258,12 +256,11 @@ class LogParser:
         for idx, line in self.df_log.iterrows():
             logID = line['LineId']
             logmessageL = self.preprocess(line['Content']).strip().split()
-            # logmessageL = filter(lambda x: x != '', re.split('[\s=:,]', self.preprocess(line['Content'])))
             matchCluster = self.treeSearch(rootNode, logmessageL)
 
             #Match no existing log cluster
             if matchCluster is None:
-                newCluster = Logcluster(logTemplate=logmessageL, logIDL=[logID])
+                newCluster = LogCluster(logTemplate=logmessageL, logIDL=[logID])
                 logCluL.append(newCluster)
                 self.addSeqToPrefixTree(rootNode, newCluster)
 
@@ -315,9 +312,8 @@ class LogParser:
         return logdf
 
 
+#Log splitting 
     def generate_logformat_regex(self, logformat):
-        """ Function to generate regular expression to split log messages
-        """
         headers = []
         splitters = re.split(r'(<[^<>]+>)', logformat)
         regex = ''

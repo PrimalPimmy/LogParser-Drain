@@ -1,0 +1,49 @@
+EventId,EventTemplate,Occurrences
+e3d9fb97,Out of Memory: Killed process <*> <*>,2359
+22fab53c,session opened for user <*> by (uid=<*>),4
+27624832,session closed for user <*>,4
+64042dcf,ALERT exited abnormally with [<*>],2
+434e8555,authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= rhost=<*> user=root,10
+3ade478a,"httpd: page allocation failure. order:<*>, <*>",6
+2bd99af8,Call Trace:,6
+6a7e2c59,[<0212ebf3>] __alloc_pages+0x274/0x<*>,6
+37f8c386,[<0213d341>] read_swap_cache_async+0x41/0x<*>,4
+4a45ffcb,[<02135dee>] swapin_readahead+0x2c/0x<*>,2
+8b49d04c,[<02135e66>] do_swap_page+0x5d/0x1f<*>,2
+17a42068,[<021364a7>] handle_mm_fault+0x9d/0xe<*>,4
+5d1d02ed,[<<*>>] <*>,21
+38143401,[<0210737b>] do_IRQ+0x15d/0x<*>,2
+18f70ff3,[<0227ecc1>] schedule+0x3ed/0x44d,6
+e3cd8a5e,[<0215242b>] dput+0x12c/0x13a,2
+05fcbb62,[<02135e6d>] do_swap_page+0x64/0x1f<*>,2
+d7191ba8,VM: killing process httpd,2
+b780997e,check pass; user unknown,9
+b4f7abc9,authentication failure; logname= uid=<*> euid=<*> tty=NODEVssh ruser= rhost=<*>,9
+cce3e3d5,[<021303bd>] do_page_cache_readahead+0xa3/0x<*>,1
+e5c3c52e,[<0212c71b>] filemap_nopage+0x119/0x26d,1
+84043d58,[<021361c7>] do_no_page+0xa1/0x<*>,1
+dd696681,[<02135fdc>] do_swap_page+0x1d3/0x1f<*>,1
+6a05380f,[<0213647b>] handle_mm_fault+0x71/0xe<*>,1
+928b60c1,[<0213f1ba>] rw_vm+0x1ce/0x1ea,4
+55be8f47,[<0212bd04>] find_or_create_page+0x39/0x<*>,1
+13b8cac9,[<02142ed7>] grow_dev_page+0x27/0xc<*>,1
+8a67813e,[<0214328d>] __getblk+0x25/0x2b,1
+d3e7b89b,[<0a8e1123>] ext3_get_inode_loc+0x4f/0x201 [ext3],1
+d5fa2095,[<0212db65>] mempool_alloc+0x5d/0xf<*>,1
+a59fb78d,[<0a8e1ba6>] ext3_reserve_inode_write+0x21/0x81 [ext3],1
+b07bd83c,[<0a8e1c17>] ext3_mark_inode_dirty+0x11/0x27 [ext3],1
+eefb6efb,[<0a8b23ef>] journal_start+0x78/0x9e [jbd],1
+b8b7ba1f,[<0a8e1c7c>] ext3_dirty_inode+0x4f/0x5f [ext3],1
+d0549964,[<0215456f>] inode_update_time+0x8e/0x<*>,1
+a9a4f636,[<0212cfe2>] generic_file_aio_write_nolock+0x302/0x84e,1
+06de9b08,[<021c8bda>] vt_console_print+0x64/0x28f,1
+4b23ee29,[<021288cf>] __print_symbol+0x110/0x<*>,1
+96fa064c,[<0212d602>] generic_file_aio_write+0x69/0x7c,1
+c3fcc04f,[<0a8ddb99>] ext3_file_write+0x19/0x88 [ext3],1
+9729a3d7,[<021c8b76>] vt_console_print+0x0/0x28f,1
+903850e0,[<021189cd>] printk+0x106/0x<*>,1
+3db5be3b,[<021060c2>] show_trace+0x92/0x<*>,1
+8a76293b,[<02129a6c>] do_acct_process+0x283/0x<*>,1
+3573d6b4,[<02129a95>] acct_process+0x15/0x1f,1
+856ba15f,[<02119ccc>] do_exit+0x9f/0x2e<*>,1
+c84160e8,[<0211476a>] do_page_fault+0x362/0x<*>,1
